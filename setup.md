@@ -117,8 +117,8 @@ DeeptCar 앞바퀴를 제어하는 서보모터를 동작시키기 위해서 이
 $pip3 install adafruit-circuitpython-servokit
 </code></pre>
 
-이 라이브러리를 사용하는 방법은 [여기](https://circuitpython.readthedocs.io/projects/servokit/en/latest/)을 참고하면 됩니다. 
-https://circuitpython.readthedocs.io/projects/servokit/en/latest/
+이 라이브러리를 사용하는 방법은 아래 링크을 참고하면 됩니다.     
+[에이다프루이트 서보킷 라이브러리 ](https://circuitpython.readthedocs.io/projects/servokit/en/latest/)
 
 이 라이브러리가 제대로 설치가 되었는지 확인하려면 터미널 프로그램에서 다음과 같이 파이썬3 프롬프트로 확인할 수 있습니다. 
 ``` python
