@@ -46,23 +46,58 @@ pi@raspberrypi:~/deeptcar/test_code $ pip3 --version
 pip 18.1 from /usr/lib/python3/dist-packages/pip (python 3.7)
 </code></pre>
 
-##### OpenCV
-OpenCV는 DeeptCar의 카메라에서 출력되는 이미지를 프로세싱하는 컴퓨터 비젼 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 OpenCV 라이브러리를 사용하여 차선인식을 수행합니다. OpenCV를 설치하려면 다음과 같이 합니다. 
-<pre><code>$pip3 install opencv-python
-$pip3 install opencv-contrib-python
-</code></pre>
-이 레포지터리의 자율주행 코드는 OpenCV 3.4.6을 사용하여 테스트 되었습니다.
+### OpenCV 설치
+OpenCV는 DeeptCar의 카메라에서 출력되는 이미지를 프로세싱하는 컴퓨터 비젼 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 OpenCV 라이브러리를 사용하여 차선인식을 수행합니다.    
+OpenCV는 현재 4.x 버전이 최신 버전 입니다. 하지만 라즈베리파이에서는 OpenCV 4.x 버전을 설치하는 것이 쉽지 않습니다. 그래서 DeeptCar는 OpenCV 3.4.6.27 버전을 설치 합니다.
+설치하는 순서는 다음과 같습니다. 먼저 OpenCV 3.4.6.27 버전에 필요한 라이브러리들을 설치합니다. 
 
-##### 텐서플로
-텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 그래서 텐서플로 라이브러리를 설치 합니다. 설치하는 방법은 다음과 같습니다. 
+<pre><code>
+$ sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-103
+$ sudo apt-get install libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+$ sudo apt-get install libatlas-base-dev
+$ sudo apt-get install libjasper-dev
+</code></pre>
+
+필요한 라이브러리 설치가 끝이나면 그 다음에는 OpenCV 라이브러리를 설치 합니다. 설치할 때, 3.4.6.27 버전을 아래 명령처럼 명시해 줍니다.
+<pre><code>
+$sudo pip3 install opencv-python==3.4.6.27
+$sudo pip3 install opencv-contrib-python==3.4.6.27
+</code></pre>
+   
+종종 설치하고자 하는 버전의 라이브러리가 없을 경우 설치가능한 버전을 알려줍니다. 예를 들어 OpenCV 3.4.6.29 버전을 설치하려고 한다면 아래와 같이 설치가능한 버전을 추천해 줍니다.    
+이럴 경우 설치가능한 버전을 한가지 골라서 설치하면 됩니다. 
+<pre><code>
+pi@raspberrypi:~/deeptcar/test_code $ sudo pip3 install opencv-python==3.4.6.29
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting opencv-python==3.4.6.29
+  Could not find a version that satisfies the requirement opencv-python==3.4.6.29 (from versions: 3.4.2.16, 3.4.2.17, 3.4.3.18, 3.4.4.19, 3.4.6.27, 3.4.7.28, 3.4.10.37, 3.4.11.39, 3.4.11.41, 3.4.11.43, 3.4.11.45, 3.4.13.47, 3.4.15.55, 4.0.1.24, 4.1.0.25, 4.1.1.26, 4.3.0.38, 4.4.0.40, 4.4.0.42, 4.4.0.44, 4.4.0.46, 4.5.1.48, 4.5.3.56)
+No matching distribution found for opencv-python==3.4.6.29
+</code></pre>
+
+OpenCV가 제대로 설치되어야 하는지 체크 할 수 있습니다. 터미널 프로그램을 열어서 파이썬3 프롬프트를 실행하고 다음과 같이 체크해서 버전이 제대로 표시되면 설치가 성공한 것 입니다. 
+``` python
+pi@raspberrypi:~/deeptcar/test_code $ python3
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> cv2.__version__
+'3.4.6'
+```
+   
+opencv-python 라이브러리와 opencv-contrib-python 라이브러리는 동일한 버전으로 설치가 되어야 합니다. 
+이 레포지터리의 자율주행 코드는 OpenCV 3.4.6.27을 사용하여 테스트 되었습니다.
+
+#### 텐서플로
+텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 텐서플로 라이브러리를 pip3를 사용해서 설치하려 하면 1.x 버전의 라이브러리가 설치 됩니다. 그래서 pip3는 텐서플로 설치에 사용할 수 없고 다음과 같은 방법으로 설치를 해야 합니다. 
 
 이 레포지터리의 자율주행 코드는 텐서플로 2.3.0을 사용하여 테스트 되었습니다. 
-##### 케라스
+#### 케라스
 케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다. 
 <pre><code>$pip3 install keras</code></pre>
 이 레포지터리의 자율주행 코드는 케라스 2.4.3을 사용하여 테스트 되었습니다.
 
-##### 에이다프루트 서보 제어모듈(Adafruit=circuitpython-servokit)
+#### 에이다프루트 서보 제어모듈(Adafruit=circuitpython-servokit)
 DeeptCar 앞바퀴를 제어하는 서보모터를 동작시키기 위해서 이 라이브러리가 필요합니다. 이 라이브러리는 다음과 같이 설치가 가능합니다. 
 <pre><code>$pip3 install adafruit-circuitpython-servokit</code></pre>
 이 라이브러리를 사용하는 방법은 [여기](https://circuitpython.readthedocs.io/projects/servokit/en/latest/)을 참고하면 됩니다. 
