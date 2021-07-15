@@ -36,7 +36,15 @@
 이 인터페이스 셋업 윈도에서 "Camera", "SSH", "VNC", "SPI", "I2C", "Serial Port"를 "Enalbe"을 체크해서 활성화 시킵니다.   
 이후에는 라즈베리파이를 재부팅하면 인터페이스 셋업이 끝이 납니다.  
 
-
+### 파이썬3 설치 
+DeeptCar는 파이썬3를 사용하여 코딩 합니다. 라즈베리파이 OS (32bit)에는 파이썬3와 파이썬 필수 툴인 pip3가 이미 설치되어 있습니다. 
+터미널 프로그램을 실행해서 다음과 같이 확인하년 설치된 파이썬3와 pip3의 버전을 확인 할 수 있습니다. 
+<pre><code>
+pi@raspberrypi:~/deeptcar/test_code $ python3 --version
+Python 3.7.3
+pi@raspberrypi:~/deeptcar/test_code $ pip3 --version
+pip 18.1 from /usr/lib/python3/dist-packages/pip (python 3.7)
+</code></pre>
 DeeptCar의 코드는 파이썬3로 작성되었습니다. 라즈베리파이 OS에 파이썬3를 설치하려면 터미널 프로그램을 이용해서 다음과 같이 설치하면 됩니다.   
 <pre><code>$sudo apt-install pip3
 $pip3 install python3
