@@ -39,7 +39,7 @@ OS 이미지를 다운 받은 후에는 balenaEtcher를 실행합니다. 이 프
 SD카드의 리스트 중에서 "Mass Storage Devie USB Device"를 선택합니다. "Show 2 hidden" 은 건드리지 않습니다.     
 ![image](https://user-images.githubusercontent.com/76054530/125734614-89dc25cb-c2af-415e-9210-65588d0c6a40.png)   
 SD카드를 선택한 후 "Select"를 클릭하면 원래의 화며으로 돌아옵니다. 이 때 "Flash" 버튼이 활성화 된 것을 볼 수 있습니다.       
-이 "Flash" 버튼을 클릭하면 SD카드에 OS 이미지를 라이팅 하기 시작합니다.   
+이 "Flash" 버튼을 클릭하면 SD카드에 OS 이미지를 라이팅 하기 시작합니다. OS 이미지 라이팅을 한 후에는 검사 작업이 진행 됩니다. 모두 합쳐서 20분 이상의 시간이 소요 됩니다.       
 ![image](https://user-images.githubusercontent.com/76054530/125734798-54b5e9fb-e750-461c-8d6b-586a4bb33406.png)    
 
 ### OS 이미지 완성이후 
