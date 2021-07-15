@@ -37,9 +37,10 @@ DeeptCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. 라�
 
 ## DeeptCar 조립 및 테스트 
 라즈베리파이 부분의 셋업이 모두 완료되면, DeeptCar를 조립하고 테스트를 실행합니다. 
+
 ### DeeptCar 조립
 DeeptCar는 조립이 되지 않은 부품 상태로 제공이 됩니다. DeeptCar를 시용하기 위해서는 차체를 조립해야 합니다. 조립순서는 아래 링크를 참고해 주십시오. 
 
-[DeeptCar 조립순서] 
+[DeeptCar 조립순서](https://cobit-git.github.io/deeptcar_doc/assembly) 
 
 
