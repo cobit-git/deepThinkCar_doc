@@ -11,6 +11,7 @@ DeeptCar는 최근에 주목받고 있는 딥러닝 기술을 이용하여 차�
 DeeptCar 하드웨어이 조립 및 셋팅에 대한 자료는 여기를 참고해 주십시오. 
 
 ### DeeptCar 키트 준비하기 
+
 #### 라즈베리파이 셋업 
 Deeptcar는 라즈베리파이를 기반으로 동작을 합니다. 따라서 먼저 라즈베리파이 OS 이미지를 만들어야 합니다. 라즈베리파이 OS이미지를 만드는 방법은 [여기](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit)를 참고해 주시기 바랍니다.  DeeptCar는 라즈베리파이 3B, 3B+, 3에서 테스트 되었습니다. 라즈베리파이 이미지를 만든 다음 소프트웨어나 라이브러리를 설치해야 합니다  
 ##### 파이썬3
