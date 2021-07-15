@@ -33,9 +33,9 @@ OS 이미지를 다운 받은 후에는 balenaEtcher를 실행합니다. 이 프
 ![image](https://user-images.githubusercontent.com/76054530/125732538-e59a94e1-6e6d-4618-b2ae-98cff665fded.png)      
 여기서 "Flash from file"을 클릭합니다. 팝업 윈도에서 다운받은 라즈베리파이 OS이미지를 찾아서 선택합니다.    
 현재(2021/7/14) 다운로드된 이미지의 이름은 "2021-05-07-raspios-buster-armhf-full.img"입니다. 
-![image](https://user-images.githubusercontent.com/76054530/125734129-b5f0a8d5-2092-4460-a97a-b2d68816f634.png)   
+![image](https://user-images.githubusercontent.com/76054530/125734129-b5f0a8d5-2092-4460-a97a-b2d68816f634.png)      
 라이팅할 이미지를 선택하면 자동적으로 balenaEtcher의 "Select target" 버튼이 활성화 됩니다. 이 버튼을 클릭하면 연결되어 있는 SD카드의 리스트가 보입니다. 
-![image](https://user-images.githubusercontent.com/76054530/125734389-83c5c384-c9db-4dc4-90f6-876f91d934d9.png)
+![image](https://user-images.githubusercontent.com/76054530/125734389-83c5c384-c9db-4dc4-90f6-876f91d934d9.png)    
 SD카드의 리스트 중에서 "Mass Storage Devie USB Device"를 선택합니다. "Show 2 hidden" 은 건드리지 않습니다. 
 ![image](https://user-images.githubusercontent.com/76054530/125734614-89dc25cb-c2af-415e-9210-65588d0c6a40.png)
 SD카드를 선택한 후 "Select"를 클릭하면 원래의 화며으로 돌아옵니다. 이 때 "Flash" 버튼이 활성화 된 것을 볼 수 있습니다.    
