@@ -43,5 +43,5 @@ SD카드를 선택한 후 "Select"를 클릭하면 원래의 화며으로 돌아
 ![image](https://user-images.githubusercontent.com/76054530/125734798-54b5e9fb-e750-461c-8d6b-586a4bb33406.png)
 
 ### OS 이미지 완성이후 
-라즈베리파이 OS이미지를 SD카드에 라이팅한 후에는 라즈베리파이 셋업을 진행합니다. 
+라즈베리파이 OS이미지를 SD카드에 라이팅한 후에는 라즈베리파이 셋업을 진행합니다. 라즈베리파이 셋업은 아래 링크를 클릭해 주십시오.       
 [라즈베리파이 셋업](https://cobit-git.github.io/deeptcar_doc/setup)
