@@ -36,6 +36,14 @@
 이 인터페이스 셋업 윈도에서 "Camera", "SSH", "VNC", "SPI", "I2C", "Serial Port"를 "Enalbe"을 체크해서 활성화 시킵니다.   
 이후에는 라즈베리파이를 재부팅하면 인터페이스 셋업이 끝이 납니다.  
 
+### 라즈베리파이 소프트웨어 업데이트 
+본격적으로 DeeptCar에 필요한 라이브러리를 설치하기 전에 라즈베리파이의 OS를 업데이트 해야 합니다. OS 업데이트는 터미널 프로그램에서 다음과 같이 합니다. 
+
+<pre><code>
+$sudo apt update
+$sudo apt full-upgrade
+</code></pre>
+
 ### 파이썬3 설치 
 DeeptCar는 파이썬3를 사용하여 코딩 합니다. 라즈베리파이 OS (32bit)에는 파이썬3와 파이썬 필수 툴인 pip3가 이미 설치되어 있습니다. 
 터미널 프로그램을 실행해서 다음과 같이 확인하년 설치된 파이썬3와 pip3의 버전을 확인 할 수 있습니다. 
@@ -88,17 +96,54 @@ Type "help", "copyright", "credits" or "license" for more information.
 opencv-python 라이브러리와 opencv-contrib-python 라이브러리는 동일한 버전으로 설치가 되어야 합니다. 
 이 레포지터리의 자율주행 코드는 OpenCV 3.4.6.27을 사용하여 테스트 되었습니다.
 
-#### 텐서플로
+### 텐서플로
 텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 텐서플로 라이브러리를 pip3를 사용해서 설치하려 하면 1.x 버전의 라이브러리가 설치 됩니다. 그래서 pip3는 텐서플로 설치에 사용할 수 없고 다음과 같은 방법으로 설치를 해야 합니다. 
 
 이 레포지터리의 자율주행 코드는 텐서플로 2.3.0을 사용하여 테스트 되었습니다. 
-#### 케라스
-케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다. 
-<pre><code>$pip3 install keras</code></pre>
+
+### 케라스
+케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다. 케라스는 
+
+<pre><code>
+$pip3 install keras
+</code></pre>
+
 이 레포지터리의 자율주행 코드는 케라스 2.4.3을 사용하여 테스트 되었습니다.
 
-#### 에이다프루트 서보 제어모듈(Adafruit=circuitpython-servokit)
+### 에이다프루트 서보 제어모듈(Adafruit=circuitpython-servokit)
 DeeptCar 앞바퀴를 제어하는 서보모터를 동작시키기 위해서 이 라이브러리가 필요합니다. 이 라이브러리는 다음과 같이 설치가 가능합니다. 
-<pre><code>$pip3 install adafruit-circuitpython-servokit</code></pre>
+
+<pre><code>
+$pip3 install adafruit-circuitpython-servokit
+</code></pre>
+
 이 라이브러리를 사용하는 방법은 [여기](https://circuitpython.readthedocs.io/projects/servokit/en/latest/)을 참고하면 됩니다. 
 https://circuitpython.readthedocs.io/projects/servokit/en/latest/
+
+이 라이브러리가 제대로 설치가 되었는지 확인하려면 터미널 프로그램에서 다음과 같이 파이썬3 프롬프트로 확인할 수 있습니다. 
+``` python
+pi@raspberrypi:~ $ python3
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from adafruit_servokit import ServoKit
+>>> 
+```
+
+
+### 라즈베리파이 GPIO
+DeeptCar는 DC모터 제어를 위해서 라즈베리파이 GPIO 라이브러리를 설치해야 합니다. GPIO 라이브러리는 터미널에서 다음과 같은 방법으로 설치가 가능합니다. 
+<pre><code>
+sudo apt-get install python-rpi.gpio
+</code></pre>
+
+이 라이브러리가 제대로 설치가 되었는지 확인하려면 터미널 프로그램에서 다음과 같이 파이썬3 프롬프트로 확인할 수 있습니다. 
+```python
+pi@raspberrypi:~ $ python3
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import RPi.GPIO as IO
+>>> 
+```
+
