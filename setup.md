@@ -98,8 +98,8 @@ opencv-python 라이브러리와 opencv-contrib-python 라이브러리는 동일
 
 ### 텐서플로
 텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 텐서플로 라이브러리를 pip3를 사용해서 설치하려 하면 1.x 버전의 라이브러리가 설치 됩니다. 그래서 pip3는 텐서플로 설치에 사용할 수 없고 다음과 같은 방법으로 설치를 해야 합니다.    
-먼저 텐서플로 2.3.0 ARM CPU용으로 빌드된 라이브러리를 다운 받습니다. 
-[텐서플로 2.3.0 for ARM CPU](https://github.com/lhelontra/tensorflow-on-arm/releases/tag/v2.3.0)
+먼저 텐서플로 2.3.0 ARM CPU용으로 빌드된 라이브러리를 다운 받습니다.    
+[텐서플로 2.3.0 for ARM CPU](https://github.com/lhelontra/tensorflow-on-arm/releases/tag/v2.3.0)   
 위 레포지터리는 Leonardo lontra라는 브라질 개발자가 텐서플로 소스코드를 라즈베리파이에 맞게 빌드하여 깃허브에 올린 것 입니다. 텐서플로 소스를 직접 빌드하는 것은 많이 어렵기 때문에 이 버전을 다운 받아 사용합니다. 다운을 받은 후에는 다음 순서로 설치를 진행합니다. 
 <pre><code>
 $ sudo -H pip3 install tensorflow-2.3.0-cp37-none-linux_armv7l.whl
