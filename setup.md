@@ -97,16 +97,47 @@ opencv-python 라이브러리와 opencv-contrib-python 라이브러리는 동일
 이 레포지터리의 자율주행 코드는 OpenCV 3.4.6.27을 사용하여 테스트 되었습니다.
 
 ### 텐서플로
-텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 텐서플로 라이브러리를 pip3를 사용해서 설치하려 하면 1.x 버전의 라이브러리가 설치 됩니다. 그래서 pip3는 텐서플로 설치에 사용할 수 없고 다음과 같은 방법으로 설치를 해야 합니다. 
+텐서플로는 구글에서 제공하는 딥러닝 라이브러리 입니다. DeeptCar 자율주행 코드는 텐서플로 라이브러리를 사용하여 딥러닝을 실행합니다. 텐서플로 라이브러리를 pip3를 사용해서 설치하려 하면 1.x 버전의 라이브러리가 설치 됩니다. 그래서 pip3는 텐서플로 설치에 사용할 수 없고 다음과 같은 방법으로 설치를 해야 합니다.    
+먼저 텐서플로 2.3.0 ARM CPU용으로 빌드된 라이브러리를 다운 받습니다. 
+[텐서플로 2.3.0 for ARM CPU](https://github.com/lhelontra/tensorflow-on-arm/releases/tag/v2.3.0)
+위 레포지터리는 Leonardo lontra라는 브라질 개발자가 텐서플로 소스코드를 라즈베리파이에 맞게 빌드하여 깃허브에 올린 것 입니다. 텐서플로 소스를 직접 빌드하는 것은 많이 어렵기 때문에 이 버전을 다운 받아 사용합니다. 다운을 받은 후에는 다음 순서로 설치를 진행합니다. 
+<pre><code>
+$ sudo -H pip3 install tensorflow-2.3.0-cp37-none-linux_armv7l.whl
+</code></pre>
 
+만약에 이전에 설치한 텐서플로가 있다면 먼저 이 명령을 사용하여 텐서플로를 제거합니다. 
+<pre><code>
+$ sudo pip3 uninstall tensorflow
+</code></pre>
+텐서플로가  제대로 설치되어야 하는지 체크 할 수 있습니다. 터미널 프로그램을 열어서 파이썬3 프롬프트를 실행하고 다음과 같이 체크해서 버전이 제대로 표시되면 설치가 성공한 것 입니다.
+```python
+pi@raspberrypi:~/deeptcar $ python3
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+>>> tensorflow.__version__
+'2.3.0'
+>>> 
+```
 이 레포지터리의 자율주행 코드는 텐서플로 2.3.0을 사용하여 테스트 되었습니다. 
 
 ### 케라스
-케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다. 케라스는 
-
+케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. DeeptCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다.
 <pre><code>
 $pip3 install keras
 </code></pre>
+
+케라스는 pip3를 사용하여 설치할 수 있습니다. 다만 케라스를 제대로 파이썬에서 import 하려면 먼저 텐서플로를 설치해야 합니다.     
+케라스가 제대로 설치되어야 하는지 체크 할 수 있습니다. 터미널 프로그램을 열어서 파이썬3 프롬프트를 실행하고 다음과 같이 체크해서 버전이 제대로 표시되면 설치가 성공한 것 입니다.
+```python
+pi@raspberrypi:~/deeptcar $ python3
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import keras
+>>> 
+```
 
 이 레포지터리의 자율주행 코드는 케라스 2.4.3을 사용하여 테스트 되었습니다.
 
