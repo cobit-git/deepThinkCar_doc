@@ -23,11 +23,11 @@ import time
 2. 차선인식에 사용할 OpenCV 모듈의 객체를 만듭니다. 
 3. 뒷바퀴 구동용 DC모터를 위한 L9110 DC 모터 드라이버 모듈의 객체를 만듭니다. 
 
-'''python
+```python
 servo = ServoKit(channels=16)
 cv_detector = CobitOpencvLaneDetect()
 motor = CobitCarMotorL9110()
-'''
+```
 
 ### 카메라 셋팅하기 
 DeeptCar 전방에 설치된 Pi카메라를 셋팅합니다. 해상도를 320x240으로 셋팅 합니다. 그 이상의 해상도는 WiFi와 VNC를 통한 원격 제어에 문제가 생기게 됩니다. 
@@ -59,18 +59,18 @@ DeeptCar는 출발 전에 앞바퀴 스티어링 앵글을 현재 차선의 굽�
 
 ```python
 for i in range(30):
-	ret, img_org = cap.read()
-	if ret:
-		lanes, img_lane = cv_detector.get_lane(img_org)
-		angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
-		if img_angle is None:
-			print("angle image out!!")
-			pass
-		else:
-			print(angle)
-			servo.servo[0].angle = angle + servo_offset			
+ret, img_org = cap.read()
+if ret:
+	lanes, img_lane = cv_detector.get_lane(img_org)
+	angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+	if img_angle is None:
+		print("angle image out!!")
+		pass
 	else:
-		print("cap error")
+		print(angle)
+		servo.servo[0].angle = angle + servo_offset			
+else:
+	print("cap error")
 ```
 		
 ###  메인 루프 
@@ -78,23 +78,23 @@ for i in range(30):
 
 ```python
 while True:
-		ret, img_org = cap.read()
-		if ret:
-			cv2.imshow('lane', img_org)
-			video_orig.write(img_org)
-			lanes, img_lane = cv_detector.get_lane(img_org)
-			
-			angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
-			if img_angle is None:
-				print("angle image out!!")
-				pass
-			else:
-				print(angle)
-				servo.servo[0].angle = angle + servo_offset
-			if cv2.waitKey(1) & 0xFF == ord('q'):
-				break
-		else:
-			print("cap error")
+ret, img_org = cap.read()
+if ret:
+	cv2.imshow('lane', img_org)
+	video_orig.write(img_org)
+	lanes, img_lane = cv_detector.get_lane(img_org)
+
+	angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+	if img_angle is None:
+		print("angle image out!!")
+		pass
+	else:
+		print(angle)
+		servo.servo[0].angle = angle + servo_offset
+	if cv2.waitKey(1) & 0xFF == ord('q'):
+		break
+else:
+	print("cap error")
 ```
 
 카메라를 통해서 이미지를 읽어오는 코드는 아래와 같습니다. 
