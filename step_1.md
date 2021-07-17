@@ -47,10 +47,10 @@ Pi카메라 영상을 레코딩 하기 위해서 셋팅을 합니다. 레코딩 
 ```python
 fourcc =  cv2.VideoWriter_fourcc(*'XVID')
 try:
-	if not os.path.exists('./data'):
-		os.makedirs('./data')
+    if not os.path.exists('./data'):
+        os.makedirs('./data')
 except OSError:
-	pass
+    pass
 video_orig = cv2.VideoWriter('./data/ car_video.avi', fourcc, 20.0, (SCREEN_WIDTH, SCREEN_HEIGHT))
 ```
 ### 출발전 차선에 맞게 앞바퀴 스티어링 앵글 조정 
@@ -61,16 +61,16 @@ DeeptCar는 출발 전에 앞바퀴 스티어링 앵글을 현재 차선의 굽�
 for i in range(30):
 ret, img_org = cap.read()
 if ret:
-	lanes, img_lane = cv_detector.get_lane(img_org)
-	angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
-	if img_angle is None:
-		print("angle image out!!")
-		pass
-	else:
-		print(angle)
-		servo.servo[0].angle = angle + servo_offset			
+    lanes, img_lane = cv_detector.get_lane(img_org)
+    angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+    if img_angle is None:
+        print("angle image out!!")
+	    pass
+    else:
+        print(angle)
+	servo.servo[0].angle = angle + servo_offset			
 else:
-	print("cap error")
+    print("cap error")
 ```
 		
 ###  메인 루프 
@@ -78,23 +78,23 @@ else:
 
 ```python
 while True:
-ret, img_org = cap.read()
-if ret:
-	cv2.imshow('lane', img_org)
-	video_orig.write(img_org)
-	lanes, img_lane = cv_detector.get_lane(img_org)
+    ret, img_org = cap.read()
+    if ret:
+        cv2.imshow('lane', img_org)
+        video_orig.write(img_org)
+        lanes, img_lane = cv_detector.get_lane(img_org)
 
-	angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
-	if img_angle is None:
-		print("angle image out!!")
-		pass
-	else:
-		print(angle)
-		servo.servo[0].angle = angle + servo_offset
-	if cv2.waitKey(1) & 0xFF == ord('q'):
-		break
-else:
-	print("cap error")
+        angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+        if img_angle is None:
+            print("angle image out!!")
+            pass
+        else:
+            print(angle)
+        servo.servo[0].angle = angle + servo_offset
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    else:
+        print("cap error")
 ```
 
 카메라를 통해서 이미지를 읽어오는 코드는 아래와 같습니다. 
@@ -118,11 +118,11 @@ angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
 카메라의 이미지에 차선이 검출되지 않으면 그 이지미는 무시합니다. 
 ```python
 if img_angle is None:
-	print("angle image out!!")
-		pass
+    print("angle image out!!")
+        pass
 else:
-	print(angle)
-		servo.servo[0].angle = angle + servo_offset
+    print(angle)
+        servo.servo[0].angle = angle + servo_offset
 ```
 
 ### 주행의 마무리 
