@@ -132,7 +132,7 @@ else:
 motor.motor_stop()
 cap.release()
 video_orig.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() 
 ```
 
 ### 그 다음 단계 
