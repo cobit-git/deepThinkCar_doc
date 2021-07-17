@@ -24,34 +24,124 @@ import time
 3. 뒷바퀴 구동용 DC모터를 위한 L9110 DC 모터 드라이버 모듈의 객체를 만듭니다. 
 
 '''python
-  servo = ServoKit(channels=16)
-  cv_detector = CobitOpencvLaneDetect()
-  motor = CobitCarMotorL9110()
+servo = ServoKit(channels=16)
+cv_detector = CobitOpencvLaneDetect()
+motor = CobitCarMotorL9110()
 '''
 
 ### 카메라 셋팅하기 
 DeeptCar 전방에 설치된 Pi카메라를 셋팅합니다. 해상도를 320x240으로 셋팅 합니다. 그 이상의 해상도는 WiFi와 VNC를 통한 원격 제어에 문제가 생기게 됩니다. 
 
 ```python
-	SCREEN_WIDTH = 320
-	SCREEN_HEIGHT = 240
+SCREEN_WIDTH = 320
+SCREEN_HEIGHT = 240
 
-	cap = cv2.VideoCapture(0)
-	cap.set(3, int(SCREEN_WIDTH))
-	cap.set(4, int(SCREEN_HEIGHT))
+cap = cv2.VideoCapture(0)
+cap.set(3, int(SCREEN_WIDTH))
+cap.set(4, int(SCREEN_HEIGHT))
 ```
 
 ### 영상 레코딩 준비
 Pi카메라 영상을 레코딩 하기 위해서 셋팅을 합니다. 레코딩 된 영상은 /data 폴더에 car_video.avi 라는 이름으로 저장 됩니다. 
 
 ```python
-  fourcc =  cv2.VideoWriter_fourcc(*'XVID')
-	try:
-		if not os.path.exists('./data'):
-			os.makedirs('./data')
-	except OSError:
-		pass
-	video_orig = cv2.VideoWriter('./data/ car_video.avi', fourcc, 20.0, (SCREEN_WIDTH, SCREEN_HEIGHT))
+fourcc =  cv2.VideoWriter_fourcc(*'XVID')
+try:
+	if not os.path.exists('./data'):
+		os.makedirs('./data')
+except OSError:
+	pass
+video_orig = cv2.VideoWriter('./data/ car_video.avi', fourcc, 20.0, (SCREEN_WIDTH, SCREEN_HEIGHT))
 ```
-  
+### 출발전 차선에 맞게 앞바퀴 스티어링 앵글 조정 
+DeeptCar는 출발 전에 앞바퀴 스티어링 앵글을 현재 차선의 굽어짐에 맞게 조정해야할 필요가 있습니다. OpenCV로 현재 차선의 굽어짐을 파악하는 데는 몇초의 시간이 필요합니다.    
+출발을 바로 하면 OpenCV로 차선의 굽어짐을 파악하기도 전에 차선을 벗어날 가능성이 있습니다. 그래서 출발 전 몇초 동안은 뒷바퀴를 구동하지 않고 제자리에서 OpenCV를 먼저 구동합니다.    
+
+```python
+for i in range(30):
+	ret, img_org = cap.read()
+	if ret:
+		lanes, img_lane = cv_detector.get_lane(img_org)
+		angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+		if img_angle is None:
+			print("angle image out!!")
+			pass
+		else:
+			print(angle)
+			servo.servo[0].angle = angle + servo_offset			
+	else:
+		print("cap error")
+```
+		
+###  메인 루프 
+앞바퀴 스티어링 앵글 조정이 끝나면 DeeptCar를 출발시키고 차선인식 주행을 실행합니다. 아래 코드는 차선인식 주행을 하는 메인 루프 코드 입니다.  
+
+```python
+while True:
+		ret, img_org = cap.read()
+		if ret:
+			cv2.imshow('lane', img_org)
+			video_orig.write(img_org)
+			lanes, img_lane = cv_detector.get_lane(img_org)
+			
+			angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+			if img_angle is None:
+				print("angle image out!!")
+				pass
+			else:
+				print(angle)
+				servo.servo[0].angle = angle + servo_offset
+			if cv2.waitKey(1) & 0xFF == ord('q'):
+				break
+		else:
+			print("cap error")
+```
+
+카메라를 통해서 이미지를 읽어오는 코드는 아래와 같습니다. 
+```python
+ret, img_org = cap.read()
+```
+이 이미지를 /data 폴더에 래코딩 하는 코드는 아래와 같습니다. 
+```python
+video_orig.write(img_org)
+```
+이 이미지를 사용해서 cv_detector.get_lane() 함수를 통해서 차선 이미지를 뽑아 냅니다. 
+```python
+anes, img_lane = cv_detector.get_lane(img_org)
+```
+이 차선 이미지를 이용해서 차선의 각도, 즉 앞바퀴 스티어링 각도를 결정합니다. 
+```python
+angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
+```
+### 앞바퀴 스티어링 각도를 이용한 서보 제어 
+앞바퀴 스티어링 각도가 결정 되면 이 각도로 서보를 제어합니다. 서보 각도를 제어할 때, 주행 정밀도를 높이기 위해 필요하다면 오프셋 값을 조정할 수 있습니다.
+카메라의 이미지에 차선이 검출되지 않으면 그 이지미는 무시합니다. 
+```python
+if img_angle is None:
+	print("angle image out!!")
+		pass
+else:
+	print(angle)
+		servo.servo[0].angle = angle + servo_offset
+```
+
+### 주행의 마무리 
+딥러닝을 위해 필요한 영상 데이터는, 트랙의 길이에 따라 다르겠지만, 대략 30초 전후 입니다. 30초 정도 이미지가 래코딩 되었다면 'q'키를 입력해서 주행을 종료할 수 있습니다.    
+종료를 처리하는 코드는 아래와 같습니다. 
+```python
+motor.motor_stop()
+cap.release()
+video_orig.release()
+cv2.destroyAllWindows()
+```
+
+### 그 다음 단계 
+1단계로 OpenCV를 통해 차선인식 주행영상을 확보 했다면, 그 다음에는 딥러닝 트레이닝을 위한 데이터셋 라벨링을 해야 합니다. 
+다음 링크를 통해서 다음 단계로 갈 수 있습니다. 
+[2단계 차선인식 데이터 라벨링]()
+
+
+
+
+
 
