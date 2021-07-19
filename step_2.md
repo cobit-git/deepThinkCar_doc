@@ -47,7 +47,7 @@ angle, img_angle = cv_detector.get_steering_angle(img_lane, lanes)
 ```
 3. 차선의 각도와 프레임 이미지를 이용해서 데이터를 라벨링 합니다. 라벨링 방식은 프레임 이지미를 PNG로 저장할 때, 프레임 이미지를 파일로 저장할 때  파일이름을 다음과 같이 정합니다.   
       
-car_video.avi + 프레임 인덱스 번호 + 차선인식 각도
+##### car_video.avi + 프레임 인덱스 번호 + 차선인식 각도
    
 4. "car_video.avi" 동영상이 모두 끝날 때까지 동영상의 모든 프레임을 이렇게 처리하여 별도의 PNG 파일로 저장합니다. 
    
