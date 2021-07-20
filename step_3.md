@@ -61,11 +61,82 @@ C:\Users\user\Downloads>
 </code></pre>
 
 #### YML 파일을 이용한 deeptCar용 아나콘다 가상환경 설치 
-deeptCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deeptCar용 아나콘다 가상화경에 보면 "cobit-tensor-env.yml"이라는 파일이 있습니다.   
-이 YML 파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들 수 있습니다.
+deeptCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deeptCar용 아나콘다 가상화경에 보면 "cobit-tensor-env.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들 수 있습니다.
+아나콘다에서 "Ananconda PowerShell Prompt"를 실행합니다. 
+![image](https://user-images.githubusercontent.com/76054530/126259373-2343277b-3438-4770-b5e8-a5dc66d3f5de.png)
+그러면 다음과 같은 윈도 파워쉘 기반의 프롬프트윈도가 열립니다. 
+![image](https://user-images.githubusercontent.com/76054530/126259745-43d96931-6e75-480d-9c43-bbf60b510dca.png)
+이 프롬프트에서 다음과 같이 명령을 입력해서 현재 만들어진 가상환경을 확인합니다. 
+   
+<pre><code>
+(base) PS C:\Users\user> conda env list
+# conda environments:
+#
+
+base                  *  C:\Users\user\anaconda3
+
+(base) PS C:\Users\user>
+</code></pre>
+   
+아나콘다를 처움 설치하고 가상환경을 만들지 않았다면 "base" 가상환경만 존재 합니다. deeptCar용 가상환경을 만들기 전에 다은로드 받은 deeptCar용 아나콘다 가상환경 소스코드 폴더로 이동합니다.   그리고 "ls" 명령을 입력해서 deeptCar용 아나콘다 가상환경 파일들을 확인합니다. 
+
+<pre><code>
+(base) PS C:\Users\user\Downloads> cd .\deeptcar-tf-PC\
+(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> ls
+
+
+    디렉터리: C:\Users\user\Downloads\deeptcar-tf-PC
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----      2021-07-20  오후 12:14                data
+d-----      2021-07-20  오후 12:14                docs
+d-----      2021-07-20  오후 12:14                output
+d-----      2021-07-20  오후 12:14                sphinx-gen-doc
+d-----      2021-07-20  오후 12:14                __pycache__
+-a----      2021-07-20  오후 12:14           2206 cobit-tensor-env.yml
+-a----      2021-07-20  오후 12:14           5715 cobitlab.yml
+-a----      2021-07-20  오후 12:14           8744 cobit_deep_learning.py
+-a----      2021-07-20  오후 12:14            171 README.md
+
+
+(base) PS C:\Users\user\Downloads\deeptcar-tf-PC>
+</code></pre>
+
+이 중에서 "cobit-tensor-env.yml" 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들게 됩니다. YML 환경파일을 확인 했으면 다음과 같이 명령을 입력합니다. 
+<pre><code>
+(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> conda env create --file cobitlab
+</code></pre>
+
+4분 정도 지나고 다음과 같은 메시지가 프롬프트 윈도에 나타나면 가상환경 설치가 완료된 것입니다. 설치된 가상환경의 이름은 자동으로 "cobitlab_win"으로 만들어 집니다. 
+<pre><code>
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate cobitlab_win
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) PS C:\Users\user\Downloads\deeptcar-tf-PC>
+</code></pre>   
+
+"cobitlab_win" 가상환경의 설치가 완료된 후, 다음과 같은 명령을 통해 가상환경을 활성화 합니다. 
+
+<pre><code>   
+(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> conda activate cobitlab_win
+(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC>
+</code></pre>   
+
+### CNN 딥러닝 트레이닝 실행 
 
 
 
+
+   
 
 
 
