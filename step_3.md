@@ -62,11 +62,11 @@ C:\Users\user\Downloads>
 
 #### YML 파일을 이용한 deeptCar용 아나콘다 가상환경 설치 
 deeptCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deeptCar용 아나콘다 가상화경에 보면 "cobit-tensor-env.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들 수 있습니다.
-아나콘다에서 "Ananconda PowerShell Prompt"를 실행합니다. 
-![image](https://user-images.githubusercontent.com/76054530/126259373-2343277b-3438-4770-b5e8-a5dc66d3f5de.png)
-그러면 다음과 같은 윈도 파워쉘 기반의 프롬프트윈도가 열립니다. 
-![image](https://user-images.githubusercontent.com/76054530/126259745-43d96931-6e75-480d-9c43-bbf60b510dca.png)
-이 프롬프트에서 다음과 같이 명령을 입력해서 현재 만들어진 가상환경을 확인합니다. 
+아나콘다에서 "Ananconda PowerShell Prompt"를 실행합니다.    
+![image](https://user-images.githubusercontent.com/76054530/126259373-2343277b-3438-4770-b5e8-a5dc66d3f5de.png)   
+그러면 다음과 같은 윈도 파워쉘 기반의 프롬프트윈도가 열립니다.    
+![image](https://user-images.githubusercontent.com/76054530/126259745-43d96931-6e75-480d-9c43-bbf60b510dca.png)   
+이 프롬프트에서 다음과 같이 명령을 입력해서 현재 만들어진 가상환경을 확인합니다.    
    
 <pre><code>
 (base) PS C:\Users\user> conda env list
