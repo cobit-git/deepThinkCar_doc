@@ -34,8 +34,8 @@ PC웹브라우저 URL 창에 아래와 같이 입력을 합니다.
 <pre><code>
  http://172.31.99.111:8888/?token=c36b6ef9dc40a49e25e5b4c8cc1653e098f7ee72e23dc1e6
 </code></pre>
-위 URL이 입력되면 PC 웹브라우저 페이지에 다음과 같이 라즈베리파이 deeptcar 폴더의 파일들이 보입니다. 여기서 "car_image_angle.zip" 파일을 선택하고 다운로드 하면 PC로 다운로드가 됩니다.    
-![image](https://user-images.githubusercontent.com/76054530/126255147-17637578-1075-4e70-bf5d-505f224585f7.png)
+위 URL이 입력되면 PC 웹브라우저 페이지에 다음과 같이 라즈베리파이 deeptcar 폴더의 파일들이 보입니다. 여기서 "car_image_angle.zip" 파일을 선택하고 다운로드 하면 PC로 다운로드가 됩니다.       
+![image](https://user-images.githubusercontent.com/76054530/126255147-17637578-1075-4e70-bf5d-505f224585f7.png)   
    
 ### PC에 deeptcar용 아나콘다 가상환경을 구성합니다. 
 CNN 딥러닝 트레이닝을 실행하려면 여러가지 라이브러리를 설치해야 합니다. 이 과정이 복잡한 편이어서 미리 만들어진 파이썬용 아나콘다 가상환경을 사용합니다. 
