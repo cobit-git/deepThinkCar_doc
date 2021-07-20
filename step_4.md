@@ -38,22 +38,24 @@ cap.set(4, int(SCREEN_HEIGHT))
 ```
 ### 출발전 차선에 맞게 앞바퀴 스티어링 앵글 조정 
 DeeptCar는 출발 전에 앞바퀴 스티어링 앵글을 현재 차선의 굽어짐에 맞게 조정해야할 필요가 있습니다. 딥러닝으로 현재 차선의 굽어짐을 파악하는 데는 약간의 시간이 필요합니다.    
-출발을 바로 하면 딥러닝으로 차선의 굽어짐을 파악하기도 전에 차선을 벗어날 가능성이 있습니다. 그래서 출발 전 몇초 동안은 뒷바퀴를 구동하지 않고 제자리에서 딥러닝으로 먼저 차선인식을 구동합니다. ```python
+출발을 바로 하면 딥러닝으로 차선의 굽어짐을 파악하기도 전에 차선을 벗어날 가능성이 있습니다. 그래서 출발 전 몇초 동안은 뒷바퀴를 구동하지 않고 제자리에서 딥러닝으로 먼저 차선인식을 구동합니다. 
+
+```python
 for i in range(30):
-	ret, img_flip = cap.read()
-        img_org = cv2.flip(img_flip, 0)
-        if ret:
-            angle_deep, img_angle = deep_detector.follow_lane(img_org)
-            if img_angle is None:
-                print("angle image out!!")
-                pass
-            else:
-                print(angle_deep)
-                servo.servo[0].angle = angle_deep + servo_offset			
-                cv2.imshow("img_angle", img_angle)
-                cv2.waitKey(1)
+    ret, img_flip = cap.read()
+    img_org = cv2.flip(img_flip, 0)
+    if ret:
+        angle_deep, img_angle = deep_detector.follow_lane(img_org)
+        if img_angle is None:
+            print("angle image out!!")
+            pass
         else:
-            print("cap error")
+            print(angle_deep)
+            servo.servo[0].angle = angle_deep + servo_offset			
+            cv2.imshow("img_angle", img_angle)
+            cv2.waitKey(1)
+    else:
+        print("cap error")
 ```	    
 
 
