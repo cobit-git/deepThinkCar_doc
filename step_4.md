@@ -58,9 +58,54 @@ for i in range(30):
         print("cap error")
 ```	    
 		
-### dfksd;flsd 
+### 메인 루프  
+앞바퀴 스티어링 앵글 조정이 끝나면 DeeptCar를 출발시키고 딥러닝 차선인식 주행을 실행합니다. 아래 코드는 차선인식 주행을 하는 메인 루프 코드 입니다.  
+```python
+while cap.isOpened():
+    ret, img_org = cap.read()
+    angle_deep, img_angle = deep_detector.follow_lane(img_org)
+    if img_angle is None:
+        print("angle image out!!")
+        pass
+    else:
+        print(angle_deep)
+        servo.servo[0].angle = angle_deep + servo_offset
 
+        cv2.imshow("img_angle", img_angle)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+```
 
+카메라를 통해서 이지미를 읽어오는 코드는 다음과 같습니다. 
+```python
+ret, img_org = cap.read()
+```
+이 이미지를 입력값으로 deep_detector.follow_lane() 함수를 통해서 차선 각도를 추출합니다. 코드는 다음과 같습니다. 
+```python
+angle_deep, img_angle = deep_detector.follow_lane(img_org)
+```
 
+### 앞바퀴 스티어링 각도를 이용한 서보 제어
+앞바퀴 스티어링 각도가 결정 되면 이 각도로 서보를 제어합니다. 서보 각도를 제어할 때, 주행 정밀도를 높이기 위해 필요하다면 오프셋 값을 조정할 수 있습니다.
+카메라의 이미지에 차선이 검출되지 않으면 그 이지미는 무시합니다. 
+```python
+if img_angle is None:
+    print("angle image out!!")
+        pass
+else:
+    print(angle)
+        servo.servo[0].angle = angle + servo_offset
+```
+### 주행의 마무리
+딥러닝 차선인식 주행을 실행할 때, VNC로 DeeptCar를 제어 한다면 'q'키를 입력해서 주행을 종료할 수 있습니다.    
+종료를 처리하는 코드는 다음과 같습니다. 
+```python
+motor.motor_stop()
+cap.release()
+cv2.destroyAllWindows() 
+```
+### 그 다음 단계
+딥러닝 차선인식 주행에 성공하면, 그 다음 단계는 MobileNet SSD와 트랜스퍼 러닝(Transfer Learning)를 사용하여 보행자, 신호등, 및 교통신호를 인식하는 오브젝트 디텍션(Object Detection)을 실행하게 됩니다. 다음 링크를 통해서 5단계로 갈 수 있습니다. 
+[5단계 오브젝트 디텍션](https://cobit-git.github.io/deeptcar_doc/step_5)
 
 
