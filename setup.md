@@ -178,6 +178,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
+### 주피터 노트북 설치 
+
 ### 라즈베리파이 소프트웨어 셋업 이후 
 라즈베리파이 소프트웨어 셋업이 끝난 후에는 DeeptCar의 하드웨어를 조립하고 셋업하는 단계로 넘어갑니다. DeeptCar 하드웨어 조립 및 셋업은 아래 링크를 클릭해 주십시오.   
 [DeeptCar 하드웨어 조립 및 셋업](https://cobit-git.github.io/deeptcar_doc/hardware)
