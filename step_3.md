@@ -132,6 +132,99 @@ done
 </code></pre>   
 
 ### CNN 딥러닝 트레이닝 실행 
+이제 CNN 딥러닝 트레이닝을 실행 할 준비가 되었습니다. 트레이닝을 하기 위해서 라벨링 데이터를 준비합니다. 먼저 'deeptcar-tf-PC" 폴더에 있는 data 폴더를 삭제합니다.  
+그 다음에 deept라즈베리파이에서 주피터 노트북을 통해 다운받은 "car_video_angle.zip" 파일을  "deeptcar-tf-PC" 폴더로 이동합니다. 그리고 압축을 풉니다. 그러면 라벨링 데이터가 담긴 data 폴더가 새로 생깁니다. 
+<pre><code>
+(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC\data> ls
+
+
+    디렉터리: C:\Users\user\Downloads\deeptcar-tf-PC\data
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----      2021-07-20  오후 12:14         101330 car_video.avi_000_085.png
+-a----      2021-07-20  오후 12:14         103780 car_video.avi_001_081.png
+-a----      2021-07-20  오후 12:14         103361 car_video.avi_002_085.png
+-a----      2021-07-20  오후 12:14         103336 car_video.avi_003_081.png
+...
+</code></pre> 
+
+딥러닝 트레이닝을 실행하는 "cobit_deep_learning.py" 스크립트는 data 폴더에서 라벨링 데이터를 읽어서 트레이닝을 합니다. 따라서 이 data 폴더에 라벨링 데이터가 있어야 합니다. 
+라벨링 데이터 준비가 되었으면 다음과 같은 명령을 통해 CNN 딥러닝 트레이닝을 진행합니다.
+
+<pre><code>
+(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC> python .\cobit_deep_learning.py
+</code></pre>
+   
+   
+<pre><code>  
+(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC> python .\cobit_deep_learning.py
+tf.__version__: 2.3.0
+keras.__version__: 2.4.3
+Training data: 152
+Validation data: 38
+2021-07-20 14:50:24.137791: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "Nvidia_Model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 31, 98, 24)        1824
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 14, 47, 36)        21636
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 5, 22, 48)         43248
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 3, 20, 64)         27712
+_________________________________________________________________
+dropout (Dropout)            (None, 3, 20, 64)         0
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 1, 18, 64)         36928
+_________________________________________________________________
+flatten (Flatten)            (None, 1152)              0
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 1152)              0
+_________________________________________________________________
+dense (Dense)                (None, 100)               115300
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                5050
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                510
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 11
+=================================================================
+Total params: 252,219
+Trainable params: 252,219
+Non-trainable params: 0
+_________________________________________________________________
+None
+WARNING:tensorflow:From .\cobit_deep_learning.py:198: Model.fit_generator (from tensorflow.python.keras.engine.training) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use Model.fit, which supports generators.
+Epoch 1/10
+ 15/300 [>.............................] - ETA: 2:25 - loss: 2526.5979
+</code></pre>
+
+Epoch10/10까지 실행하는데 40분~50분 정도의 시간이 소요됩니다. 실행이 끝이나면 output 폴더에 추론파일인 "lane_navigation_final.h5' 파일이 생성됩니다. 이 추론파일을 이용해서 딥러닝 자율주행을 실행하게 됩니다. 
+
+### 추론파일을 라즈베리파이로 전달하기 
+딥러닝 트레이닝으로 생성된 추론파일은 deeptCar 라즈베리파이로 다시 전달이 되어야 합니다. 추론파일을 PC에서 라즈베리파이로 전달 할 때도 주피터 노트북을 사용하여 전달합니다.    
+추론파일은 라즈베리파이 deeptCar 폴더의 models 폴더에 전달하면 됩니다. 
+
+![image](https://user-images.githubusercontent.com/76054530/126271416-a2126999-f99f-4416-9287-07b29cc35035.png)
+
+먼저 주피터 노트북에서 deeptCar/midels 폴더로 이동합니다. 주피터 노트북 오른쪽 윗쪽에 "upload" 버턴을 클릭해서 추론파일인 "lane_navigation_final.h5'를 업로드 합니다.    
+업로드가 제댜로 되었다면 다음과 같이 주필터 노트북에 디스플레이이 됩니다. 
+
+
+
+
+
+
+
+
+
 
 
 
