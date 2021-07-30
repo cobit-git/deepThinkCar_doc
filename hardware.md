@@ -30,11 +30,11 @@ $python3 test_servo_angle_control.py
 
 ### Pi 카메라 
 Pi 카메라를 테스트하기 위해 "test_opencv_video.py" 코드를 사용합니다. 테스트를 위해서는 다음과 같이 코드를 실행을 합니다.    
-이 코드는 test_code  폴더에서 실행합니다. 
+이 코드는 test_code  폴더에서 실행합니다.    
 <pre><code>
 $python3 test_opencv_video.py
 </code></pre>
 ![image](https://user-images.githubusercontent.com/76054530/127595646-7c19f192-9d07-44e1-8b32-131989db6b3f.png)
 
-이 코드를 실행했을 때, 카메라 윈도 창이 열리고 카메라 영상이 디스플레이 되면 정상입니다. 
+이 코드를 실행했을 때, 카메라 윈도 창이 열리고 카메라 영상이 디스플레이 되면 정상입니다.     
 ![image](https://user-images.githubusercontent.com/76054530/127595713-3f3bca11-f36a-405d-a12a-bb0930180849.png)
