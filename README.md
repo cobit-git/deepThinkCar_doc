@@ -12,7 +12,7 @@ deepThinkCar는 차선인식주행(Behavior Cloning)과 함께 자율주행에�
 
 
 
-### DeeptCar 키트 준비하기 
+### deepThinkCar 키트 준비하기 
 
 #### 라즈베리파이 OS 이미지 만들기 
 deepThinkCar는 라즈베리파이를 기반으로 동작을 합니다. 따라서 먼저 라즈베리파이 OS 이미지를 만들어야 합니다. 라즈베리파이 OS이미지를 만드는 방법은 아래 링크를 참고해 주십시오.  
