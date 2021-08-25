@@ -17,7 +17,7 @@ deepThinkCar는 차선인식주행(Behavior Cloning)과 함께 자율주행에�
 #### 라즈베리파이 OS 이미지 만들기 
 deepThinkCar는 라즈베리파이를 기반으로 동작을 합니다. 따라서 먼저 라즈베리파이 OS 이미지를 만들어야 합니다. 라즈베리파이 OS이미지를 만드는 방법은 아래 링크를 참고해 주십시오.  
     
-[라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deeptcar_doc/os)   
+[라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)   
     
 deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. 라즈베리파이 이미지를 만든 다음에는 라즈베리파이 셋업을 합니다.
    
@@ -31,9 +31,9 @@ deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. �
 
 라즈베리파이 소프트웨어 셋업 및 설치하는 방법은 아래 링크를 참고해 주십시오. 
 
-[라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deeptcar_doc/setup)
+[라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)
 
-deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. 라즈베리파이 셋업 이후에는 DeeptCar 조립 및 테스트를 진행합니다. 
+deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. 라즈베리파이 셋업 이후에는 deepThinkCar 조립 및 테스트를 진행합니다. 
 
 ### deepThinkCar 조립 및 테스트 
 라즈베리파이 부분의 셋업이 모두 완료되면, deepThinkCar를 조립하고 테스트를 실행합니다. 
@@ -41,7 +41,7 @@ deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. �
 #### deepThinkCar조립
 deepThinkCar는 조립이 되지 않은 부품 상태로 제공이 됩니다. deepThinkCar를 시용하기 위해서는 차체를 조립해야 합니다. 조립순서는 아래 링크를 참고해 주십시오. 
 
-[deepThinkCar 조립순서](https://cobit-git.github.io/deeptcar_doc/assembly) 
+[deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly) 
 
 #### deepThinkCar 하드웨어 테스트 및 셋팅
 deepThinkCar 조립이 끝이나면 하드웨어를 테스트 합니다. 테스트 할 하드웨어는 다음과 같습니다. 
@@ -53,14 +53,14 @@ deepThinkCar 조립이 끝이나면 하드웨어를 테스트 합니다. 테스�
 
 deepThinkCar 하드웨어를 테스트 하는 방법은 아래 링크를 참고해 주십시오. 
 
-[deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deeptcar_doc/hardware)
+[deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)
 
 ### 자율주행하기 
 #### 1단계: OpenCV 기반 차선인식 주행
 1단계에서는 OpenCV를 이용해서 차선인식 주행을 실행합니다. 차선인식 주행을 실행해서 딥러닝 트레이닝에 사용할 데이터셋을 같이 얻습니다. 
 OpenCV 기반 차선인식 주행을 하는 파이썬 코드에 대한 설명은 다음 링크를 참고해 주십시오. 
 
-[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deeptcar_doc/step_1)
+[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)
 
 #### 2단계: 차선인식 데이터 라벨링 
 2단계에서는 1단계에서 얻은 차선인식주행 데이터셋을 라벨링을 합니다. 데이터셋이 라벨링이 되면 딥러닝 트레이닝을 할 수 있습니다. 
