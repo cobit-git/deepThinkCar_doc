@@ -1,11 +1,11 @@
-## DeeptCar 자율주행 3단계: 딥러닝 트레이닝 
+## deepThinkCar 자율주행 3단계: 딥러닝 트레이닝 
 
 ### 3단계에서는...
 3단계에서는 2단계에서 라벨링 된 데이터를 CNN을 통해서 딥러닝 트레이닝을 실행합니다. 이 단계는 라즈베리파이에서 실행하지 않고 PC에서 실행하게 됩니다.    
 라즈베리파이는 CNN을 통한 딥러닝 트레이닝을 실행하기에는 성능이 많이 부족해서 PC를 이용합니다. CNN 딥러닝 트레이닝을 하기 위해서는 다음의 단계를 실행합니다. 
 
-### deeptcar/data 폴더의 라벨링 데이터를 PC로 옮깁니다. 
-라즈베리파이의 워킹 폴더인 deeptcar/data 폴더에 저장된 라벨링 데이터인 PNG 파일들을 압축합니다.    
+### deepThinkCar/data 폴더의 라벨링 데이터를 PC로 옮깁니다. 
+라즈베리파이의 워킹 폴더인 deepThinkCar/data 폴더에 저장된 라벨링 데이터인 PNG 파일들을 압축합니다.    
 압축을 하는 이유는 라즈베리파이에서 PC로 라벨링 데이터를 쉽게 전달하기 위해서 입니다. 압축을 하기 위해서는 다음 코드를 실행합니다.    
 <pre><code>
 $python3 cobit_label_data_compress.py
@@ -20,7 +20,7 @@ $ ls -al
 압축을 위해 "cobit_label_data_compress.py" 스크립트를 실행하면 "car_image_angle.zip"이라는 압축파일이 하나 생깁니다.    
 이 파일을 주피터 노트북을 이용해서 PC로 옮겨야 합니다. 이를 위해 먼저 주피터 노트북을 다음과 같이 실행합니다. 
 <pre><code>
-pi@raspberrypi:~/deeptcar $ jupyter-notebook --ip=172.31.99.111 --no-browser
+pi@raspberrypi:~/deepThinkCar $ jupyter-notebook --ip=172.31.99.111 --no-browser
 ....    
     To access the notebook, open this file in a browser:
         file:///home/pi/.local/share/jupyter/runtime/nbserver-1170-open.html
@@ -34,10 +34,10 @@ PC웹브라우저 URL 창에 아래와 같이 입력을 합니다.
 <pre><code>
  http://172.31.99.111:8888/?token=c36b6ef9dc40a49e25e5b4c8cc1653e098f7ee72e23dc1e6
 </code></pre>
-위 URL이 입력되면 PC 웹브라우저 페이지에 다음과 같이 라즈베리파이 deeptcar 폴더의 파일들이 보입니다. 여기서 "car_image_angle.zip" 파일을 선택하고 다운로드 하면 PC로 다운로드가 됩니다.       
+위 URL이 입력되면 PC 웹브라우저 페이지에 다음과 같이 라즈베리파이 deepThinkCar 폴더의 파일들이 보입니다. 여기서 "car_image_angle.zip" 파일을 선택하고 다운로드 하면 PC로 다운로드가 됩니다.       
 ![image](https://user-images.githubusercontent.com/76054530/126255147-17637578-1075-4e70-bf5d-505f224585f7.png)   
    
-### PC에 deeptcar용 아나콘다 가상환경을 구성합니다. 
+### PC에 deepThinkCar용 아나콘다 가상환경을 구성합니다. 
 CNN 딥러닝 트레이닝을 실행하려면 여러가지 라이브러리를 설치해야 합니다. 이 과정이 복잡한 편이어서 미리 만들어진 파이썬용 아나콘다 가상환경을 사용합니다. 
 
 #### 아나콘다 다운로드 및 설치
@@ -48,8 +48,8 @@ CNN 딥러닝 트레이닝을 실행하려면 여러가지 라이브러리를 �
 #### deeptCar용 아나콘다 가상환경 다운로드 
 아나콘다가 PC에 잘 설치가 되었으면 deeptcar 트레이닝용 가상환경을 다운로드 받습니다.    
 <pre><code>
-C:\Users\user\Downloads>git clone https://github.com/cobit-git/deeptcar-tf-PC.git
-Cloning into 'deeptcar-tf-PC'...
+C:\Users\user\Downloads>git clone https://github.com/cobit-git/deepThinkCar-tf-PC.git
+Cloning into 'deepThinkCar-tf-PC'...
 remote: Enumerating objects: 617, done.
 remote: Counting objects: 100% (617/617), done.
 remote: Compressing objects: 100% (608/608), done.
@@ -61,7 +61,7 @@ C:\Users\user\Downloads>
 </code></pre>
 
 #### YML 파일을 이용한 deeptCar용 아나콘다 가상환경 설치 
-deeptCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deeptCar용 아나콘다 가상화경에 보면 "cobit-tensor-env.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들 수 있습니다.
+deepThinkCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deepThinkCar용 아나콘다 가상화경에 보면 "cobit-tensor-env.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들 수 있습니다.
 아나콘다에서 "Ananconda PowerShell Prompt"를 실행합니다.    
 ![image](https://user-images.githubusercontent.com/76054530/126259373-2343277b-3438-4770-b5e8-a5dc66d3f5de.png)   
 그러면 다음과 같은 윈도 파워쉘 기반의 프롬프트윈도가 열립니다.    
@@ -78,14 +78,14 @@ base                  *  C:\Users\user\anaconda3
 (base) PS C:\Users\user>
 </code></pre>
    
-아나콘다를 처움 설치하고 가상환경을 만들지 않았다면 "base" 가상환경만 존재 합니다. deeptCar용 가상환경을 만들기 전에 다은로드 받은 deeptCar용 아나콘다 가상환경 소스코드 폴더로 이동합니다.   그리고 "ls" 명령을 입력해서 deeptCar용 아나콘다 가상환경 파일들을 확인합니다. 
+아나콘다를 처움 설치하고 가상환경을 만들지 않았다면 "base" 가상환경만 존재 합니다. deeptCar용 가상환경을 만들기 전에 다은로드 받은 deepThinkCar용 아나콘다 가상환경 소스코드 폴더로 이동합니다.   그리고 "ls" 명령을 입력해서 deepThinkCar용 아나콘다 가상환경 파일들을 확인합니다. 
 
 <pre><code>
-(base) PS C:\Users\user\Downloads> cd .\deeptcar-tf-PC\
-(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> ls
+(base) PS C:\Users\user\Downloads> cd .\deepThinkCar-tf-PC\
+(base) PS C:\Users\user\Downloads\deepThinkCar-tf-PC> ls
 
 
-    디렉터리: C:\Users\user\Downloads\deeptcar-tf-PC
+    디렉터리: C:\Users\user\Downloads\deepThinkCar-tf-PC
 
 
 Mode                 LastWriteTime         Length Name
@@ -101,12 +101,12 @@ d-----      2021-07-20  오후 12:14                __pycache__
 -a----      2021-07-20  오후 12:14            171 README.md
 
 
-(base) PS C:\Users\user\Downloads\deeptcar-tf-PC>
+(base) PS C:\Users\user\Downloads\deepThinkCar-tf-PC>
 </code></pre>
 
 이 중에서 "cobit-tensor-env.yml" 환경파일을 이용해서 deeptCar용 아나콘다 가상환경을 만들게 됩니다. YML 환경파일을 확인 했으면 다음과 같이 명령을 입력합니다. 
 <pre><code>
-(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> conda env create --file cobitlab
+(base) PS C:\Users\user\Downloads\deepThinkCar-tf-PC> conda env create --file cobitlab
 </code></pre>
 
 4분 정도 지나고 다음과 같은 메시지가 프롬프트 윈도에 나타나면 가상환경 설치가 완료된 것입니다. 설치된 가상환경의 이름은 자동으로 "cobitlab_win"으로 만들어 집니다. 
@@ -127,18 +127,18 @@ done
 "cobitlab_win" 가상환경의 설치가 완료된 후, 다음과 같은 명령을 통해 가상환경을 활성화 합니다. 
 
 <pre><code>   
-(base) PS C:\Users\user\Downloads\deeptcar-tf-PC> conda activate cobitlab_win
-(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC>
+(base) PS C:\Users\user\Downloads\deepThinkCar-tf-PC> conda activate cobitlab_win
+(cobitlab_win) PS C:\Users\user\Downloads\deepThinkCar-tf-PC>
 </code></pre>   
 
 ### CNN 딥러닝 트레이닝 실행 
-이제 CNN 딥러닝 트레이닝을 실행 할 준비가 되었습니다. 트레이닝을 하기 위해서 라벨링 데이터를 준비합니다. 먼저 'deeptcar-tf-PC" 폴더에 있는 data 폴더를 삭제합니다.  
-그 다음에 deept라즈베리파이에서 주피터 노트북을 통해 다운받은 "car_video_angle.zip" 파일을  "deeptcar-tf-PC" 폴더로 이동합니다. 그리고 압축을 풉니다. 그러면 라벨링 데이터가 담긴 data 폴더가 새로 생깁니다. 
+이제 CNN 딥러닝 트레이닝을 실행 할 준비가 되었습니다. 트레이닝을 하기 위해서 라벨링 데이터를 준비합니다. 먼저 'deepThinkCar-tf-PC" 폴더에 있는 data 폴더를 삭제합니다.  
+그 다음에 deepThinkCar 라즈베리파이에서 주피터 노트북을 통해 다운받은 "car_video_angle.zip" 파일을  "deepThinkCar-tf-PC" 폴더로 이동합니다. 그리고 압축을 풉니다. 그러면 라벨링 데이터가 담긴 data 폴더가 새로 생깁니다. 
 <pre><code>
-(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC\data> ls
+(cobitlab_win) PS C:\Users\user\Downloads\deepThinkCar-tf-PC\data> ls
 
 
-    디렉터리: C:\Users\user\Downloads\deeptcar-tf-PC\data
+    디렉터리: C:\Users\user\Downloads\deepThinkCar-tf-PC\data
 
 
 Mode                 LastWriteTime         Length Name
@@ -159,7 +159,7 @@ Mode                 LastWriteTime         Length Name
    
    
 <pre><code>  
-(cobitlab_win) PS C:\Users\user\Downloads\deeptcar-tf-PC> python .\cobit_deep_learning.py
+(cobitlab_win) PS C:\Users\user\Downloads\deepThinkCar-tf-PC> python .\cobit_deep_learning.py
 tf.__version__: 2.3.0
 keras.__version__: 2.4.3
 Training data: 152
@@ -214,14 +214,14 @@ Epoch10/10까지 실행하는데 40분~50분 정도의 시간이 소요됩니다
 
 ![image](https://user-images.githubusercontent.com/76054530/126271416-a2126999-f99f-4416-9287-07b29cc35035.png)
 
-먼저 주피터 노트북에서 deeptCar/midels 폴더로 이동합니다. 주피터 노트북 오른쪽 윗쪽에 "upload" 버턴을 클릭해서 추론파일인 "lane_navigation_final.h5'를 업로드 합니다.    
+먼저 주피터 노트북에서 deepThinkCar/midels 폴더로 이동합니다. 주피터 노트북 오른쪽 윗쪽에 "upload" 버턴을 클릭해서 추론파일인 "lane_navigation_final.h5'를 업로드 합니다.    
 업로드가 제댜로 되었다면 다음과 같이 주피터 노트북에 디스플레이이 됩니다. 
 
 ![image](https://user-images.githubusercontent.com/76054530/126324322-8526ea70-bdb8-474f-80ab-a4d5971ced77.png)
 
 ### 다음 단계
-3단계에서 딥러닝 트레이닝을 통해서 추론파일을 생성하고, 이 추론파일을 deeptCar 라즈베리파이로 업로드 했습니다. 그 다음 단계인 4단계에서는 이 추론파일을 이용해서 딥러닝 자율주행을 실행할 수 있었습니다. 다음 링크를 통해서 4단계로 갈 수 있습니다.    
-[4단계 입러닝 자율주행하기](https://cobit-git.github.io/deeptcar_doc/step_4)
+3단계에서 딥러닝 트레이닝을 통해서 추론파일을 생성하고, 이 추론파일을 deepThinkCar 라즈베리파이로 업로드 했습니다. 그 다음 단계인 4단계에서는 이 추론파일을 이용해서 딥러닝 자율주행을 실행할 수 있었습니다. 다음 링크를 통해서 4단계로 갈 수 있습니다.    
+[4단계 입러닝 자율주행하기](https://cobit-git.github.io/deepThinkCar_doc/step_4)
 
 
 
