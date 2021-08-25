@@ -1,4 +1,4 @@
-## DeeptCar에 사용할 라즈베리파이 OS 이미지 만들기 
+## deepThinkCar에 사용할 라즈베리파이 OS 이미지 만들기 
 
 라즈베리파이 OS 이미지를 만드는 방법은 여러가지 있습니다. 이 중에서 많이 사용되는 두가지 방법을 사용해서 라즈베리파이 OS 이지미를 만들 수 있습니다.
 첫번째 방법은 라즈베리파이 재단에서 권장하는 Raspberry Pi Imager를 사용하는 방업입니다. 두번째는 balenaEcher라는 프로그램을 사용하여 이미지를 만들 수 있습니다. 
@@ -43,4 +43,4 @@ SD카드를 선택한 후 "Select"를 클릭하면 원래의 화며으로 돌아
 
 ### OS 이미지 완성이후 
 라즈베리파이 OS이미지를 SD카드에 라이팅한 후에는 라즈베리파이 셋업을 진행합니다. 라즈베리파이 셋업은 아래 링크를 클릭해 주십시오.       
-[라즈베리파이 셋업](https://cobit-git.github.io/deeptcar_doc/setup)
+[라즈베리파이 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)
