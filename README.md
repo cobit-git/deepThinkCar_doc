@@ -35,8 +35,8 @@ deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. �
 
 deepThinkCar는 라즈베리파이 3B, 3B+, 4에서 테스트 되었습니다. 라즈베리파이 셋업 이후에는 deepThinkCar 라즈베리파이 VNC 개발환경 구축을 진행합니다. 
 
-### VNC 개발환경 셋압 
-deepThinkCar를 프로그래밍해서 자율주행을 하려면 라즈베리파이 VNC 코딩 환경을 만들어야 합니다. deepThinkCar는 움직이는 자동차이기 때문에 모니터/키보드/마우스를 이요해서 프로그래밍 하는 것이 불가능 합니다. 따라서 VNC를 이용해서 프로그래밍 하는 환경을 만들어야 합니다.    
+### VNC 개발환경 셋업
+deepThinkCar를 프로그래밍해서 자율주행을 하려면 라즈베리파이 VNC 코딩 환경을 만들어야 합니다. deepThinkCar는 움직이는 자동차이기 때문에 모니터/키보드/마우스를 이용해서 프로그래밍 하는 것이 불가능 합니다. 따라서 VNC를 이용해서 프로그래밍 하는 환경을 만들어야 합니다.    
 VNC 개발환경을 구축하는 방법은 아래 링크를참고해 주십시오.    
 
 [deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc.md)
