@@ -108,4 +108,16 @@ cv2.destroyAllWindows()
 딥러닝 차선인식 주행에 성공하면, 그 다음 단계는 MobileNet SSD와 트랜스퍼 러닝(Transfer Learning)를 사용하여 보행자, 신호등, 및 교통신호를 인식하는 오브젝트 디텍션(Object Detection)을 실행하게 됩니다. 다음 링크를 통해서 5단계로 갈 수 있습니다.     
 [5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
 
+### 링크
+[라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
+[라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)   
+[deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc)   
+[deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly)    
+[deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)   
+[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)   
+[2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)
+[3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)   
+[4단계 딥러닝 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_4)      
+[5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
+
 
