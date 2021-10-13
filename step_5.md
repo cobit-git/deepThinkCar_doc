@@ -8,6 +8,6 @@
 [deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)   
 [1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)   
 [2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)
-[3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)   
+[3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)       
 [4단계 딥러닝 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_4)      
 [5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
