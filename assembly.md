@@ -226,7 +226,7 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 ![servo_arm_3](https://user-images.githubusercontent.com/76054530/156140602-3e3b8251-3470-45e8-9b45-57bda9f942a5.jpg)
 
 이렇게 조립된 앞바퀴 암을 deepThinkCar 앞바퀴 쪽에 아래 사진과 같이 조립합니다. 아직 서보암을 서보모터에 완전히 고정하지 않습니다. 
-최종 조립단계에서 서보모터의 영점을 잡은 후에 서보엄을 서보모터에 나사로 고정하게 됩니다. 
+최종 조립단계에서 서보모터의 영점을 잡은 후에 서보암을 서보모터에 나사로 고정하게 됩니다. 
 
 ![front_wheel_assy_7_8](https://user-images.githubusercontent.com/76054530/156141385-edab8bb2-efe6-40bc-adc5-b63fd3b25a34.jpg)
 
@@ -245,11 +245,11 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 
 HAT보드와 모터보드 사이를 연결합니다. 다음과 같이 연결하면 됩니다. 
 
-**- HAT                모터보드**
-**- I2C Bus (J3)       I2C Bus(J2)**
-**- M1(J8)             DC M1(J3)**
-**- M2(J9)             DC M2(J4)**
-**- Motor Power(J11)   Battery 5V(J1)** 
+**- HAT                모터보드**  
+**- I2C Bus (J3)       I2C Bus(J2)**  
+**- M1(J8)             DC M1(J3)**  
+**- M2(J9)             DC M2(J4)**  
+**- Motor Power(J11)   Battery 5V(J1)**   
 
 ![hat_motor_2](https://user-images.githubusercontent.com/76054530/156146882-fa83b8b8-3918-4361-9a4d-1ad052d5859e.jpg)
 
