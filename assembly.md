@@ -1,4 +1,3 @@
-(아직 작성중입니다.)
 ## deepThinCar 조립하기 
 deepThinkCar를 조립하기 전에 박스안에 포함되어 있는 키트구성품을 확인합니다. 구매하신 deepThinkCar키트 안에는 다음 사진과 같은 키트 구성품이 있습니다. 
 ![deepThinkCar 패킹 리스트](https://user-images.githubusercontent.com/76054530/156094930-f58e972f-d33c-4b0d-b4a7-4a39dc458763.jpg)  
@@ -72,15 +71,20 @@ OS SD카트, 여분의 나사는 패킹 리스트에 기록되어 있지는 않�
 - M2.5x12 PCB 서포터 6개
 - M2.5 너트 4개 
 
-라즈베리파이 보드 및 HAT 보드 조립은 아래 사진의 순서대로 연결하면 됩니다. 제일 먼저 M2.5x12 PCB 서포트 4개와 너트 4개를 조립합니다. 
+라즈베리파이 보드 및 HAT 보드 조립은 아래 사진의 순서대로 연결하면 됩니다. 제일 먼저 M2.5x12 PCB 서포트 4개와 너트 4개를 조립합니다. 그 다음에는 M2.5x12 PCB 서포트 위에 라즈베리파이 보드를 얹고, GPIO 포트가 있는 쪽을 노란색 원의 표시와 같이 M2.5x5 볼트를 체결합니다. 
 
-![rpi_assy_2](https://user-images.githubusercontent.com/76054530/156107749-29b5012e-c4f3-497f-b247-e3584e807408.jpg)
+![rpi_assy_2_3](https://user-images.githubusercontent.com/76054530/156109361-8b9fb9ea-ef9b-4204-9133-2de0226dda4f.jpg)
 
-그 다음에는 M2.5x12 PCB 서포트 위에 라즈베리파이 보드를 얹고, 노란색 원의 표시와 같이 M2.5x5 볼트를 체결합니다. 
 
-![rpi_assy_3](https://user-images.githubusercontent.com/76054530/156107894-17f91361-3236-46cb-b4ad-9e9186b22c73.jpg)
+그 다음에는 라즈베리파이 보드의 GPIO 포트가 있는 반대편 쪽을 노란색 원 표시와 같이 M2.5X12 PCB 서포터 2개를 체결합니다. 그리고 HAT보드를 라즈베리파이 보드 위에 얹습니다. **이 때 꼭 라즈베리파이 핀과 HAT의 핀이 일치하게 얹어야 합니다. 잘못 얹은 상태로 전원을 인가하면 라즈베리파이의 GPIO 부분이 손상되어 라즈베리파이 보드를 사용하지 못할 수가 있습니다. 따라서 꼭 아래 사진을 참고해서 정확하게 pin과 pin이 맞게 얹어 주십시오.**
 
-그 다음에는 
+![rpi_assy_4_5](https://user-images.githubusercontent.com/76054530/156109518-676d6016-db11-47c0-9400-ed82ae2c3e70.jpg)
+
+마지막으로 M2.5x5 볼트로 HAT 보드를 고정해 주면 라즈베리파이보드 및 HAT보드 조립이 끝이 납니다. 
+![rpi_assy_6](https://user-images.githubusercontent.com/76054530/156109132-191c3453-a324-4c1d-be75-5f0c1e9b79d5.jpg)
+
+## 5. 앞바퀴 조립 
+아크릴 본체 상판에 부탁되는 보드들의 조립이 끝이나면 앞바퀴 어셈블리를 조랍할 차례입니다. 
 
 ### 링크
 [라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
