@@ -198,7 +198,7 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 
 ![camera_assy_6](https://user-images.githubusercontent.com/76054530/156135014-f545975b-1b3a-4ab1-9b3a-0db73c2e9abc.jpg)
 
-### 뒷바퀴 조립 및 아크릴 상/하판 어셈블리 조립  
+### 10. 뒷바퀴 조립 및 아크릴 상/하판 어셈블리 조립  
 아크릴 본체 하판 어셈블리에 뒷바퀴를 연결합니다. 뒷바퀴를 연결할 때 뒷바퀴가 하판 구조물에 닿지 않도록 적당히 끼워 줍니다. 
 
 ![rear_wheel_assy_9_10](https://user-images.githubusercontent.com/76054530/156136374-af5bb372-cdee-4c8a-aada-a6782995e7e9.jpg)
@@ -206,9 +206,21 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 뒤바퀴 조립후에는 아크릴 상/하판 어셈블리를 조립합니다. 이전 4번 연결 부품의 M3 너트를 사용해서 아크릴 상하 어셈블리를 조립합니다. 
 앞바퀴 조립 또한 아래 사진을 보고 우선 조립을 해 놓습니다. 
 
-![total__assy_1_2](https://user-images.githubusercontent.com/76054530/156137603-b5086eee-be0b-496b-ac33-a9a0a826aafb.jpg)
+![total_assy_1_2](https://user-images.githubusercontent.com/76054530/156138179-69e391a6-0b86-4d3d-9050-64bf48dc5584.jpg)
 
+### 11. 앞바퀴 암 조립 
+아크릴 상/하 아셈블리가 조립되면 비로소 deepThinkCar가 모양을 갖추게 됩니다. 하지만 아직 몇단계가 남아있는데 이번에는 앞바퀴 암과 서보모터 연결을 합니다. 
+앞바퀴 2개를 앞바퀴 암으로 서로 연결하고 앞바퀴 암을 서보모터에 연결하려면 다음 구성품이 필요합니다. 
 
+- 앞바퀴 암(3D 프리팅)
+- 서보암(19번 서보키트에 동봉되었던 서보암)
+- 나사류(19번 서보키트에 동봉되었던 나사류)
+
+![servo_arm_1_2](https://user-images.githubusercontent.com/76054530/156139074-d5d83c89-04d3-4c6c-aa60-067cb9a803bd.jpg)
+
+이 앞바퀴암과 서보암을 나사로 연결하여 다음과 같이 조립합니다.  
+
+![servo_arm_3](https://user-images.githubusercontent.com/76054530/156140602-3e3b8251-3470-45e8-9b45-57bda9f942a5.jpg)
 
 ### 링크
 [라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
