@@ -216,11 +216,50 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 - 서보암(19번 서보키트에 동봉되었던 서보암)
 - 나사류(19번 서보키트에 동봉되었던 나사류)
 
-![servo_arm_1_2](https://user-images.githubusercontent.com/76054530/156139074-d5d83c89-04d3-4c6c-aa60-067cb9a803bd.jpg)
+![servo_arm_1_2](https://user-images.githubusercontent.com/76054530/156141649-e57397db-0ec0-4c97-afc2-f9d88269fba5.jpg)
 
 이 앞바퀴암과 서보암을 나사로 연결하여 다음과 같이 조립합니다.  
 
 ![servo_arm_3](https://user-images.githubusercontent.com/76054530/156140602-3e3b8251-3470-45e8-9b45-57bda9f942a5.jpg)
+
+이렇게 조립된 앞바퀴 암을 deepThinkCar 앞바퀴 쪽에 아래 사진과 같이 조립합니다. 아직 서보암을 서보모터에 완전히 고정하지 않습니다. 
+최종 조립단계에서 서보모터의 영점을 잡은 후에 서보엄을 서보모터에 나사로 고정하게 됩니다. 
+
+![front_wheel_assy_7_8](https://user-images.githubusercontent.com/76054530/156141385-edab8bb2-efe6-40bc-adc5-b63fd3b25a34.jpg)
+
+### 12. 배선연결 
+앞바퀴와 서보모터 연결이 끝이나면 그 다음에는 각종 배선을 합니다. 여러가지 선을 연결해야 하는데 먼저 배터리 전원을 HAT보드에 연결합니다. 
+
+![battery_power](https://user-images.githubusercontent.com/76054530/156143359-81a00494-49b6-4107-9ed6-0814c4f17280.jpg)
+
+모터보드와 모터를 연결합니다. M1모터는 모터보드의 M1 커넥터에, M2모터는 모터보드의 M2 커넥터에 연결합니다. 
+
+![motor_connect](https://user-images.githubusercontent.com/76054530/156143624-97d3b9b7-3e27-4b85-bffc-4f9b746126f7.jpg)
+
+서보모터 커넥터를 연결합니다. 모터보터의 서보모터 커넥타  1번에 연결합니다. 고동색선이 GND 핀으로 연결해야 합니다. 서보 커넥터는 방향에 바뀔수 있으니 주의하시기 바랍니다. 
+
+![servo_connect](https://user-images.githubusercontent.com/76054530/156144016-de252cd7-2c17-4a11-a926-cd42aa8af423.jpg)
+
+HAT보드와 모터보드 사이를 연결합니다. 다음과 같이 연결하면 됩니다. 
+
+**- HAT                모터보드**
+**- I2C Bus (J3)       I2C Bus(J2)**
+**- M1(J8)             DC M1(J3)**
+**- M2(J9)             DC M2(J4)**
+**- Motor Power(J11)   Battery 5V(J1)** 
+
+![hat_motor_2](https://user-images.githubusercontent.com/76054530/156146882-fa83b8b8-3918-4361-9a4d-1ad052d5859e.jpg)
+
+### 배터리 장착 및 SD카드 삽입
+이제 서보 캘리브레이션을 제외하고는 모든 조립이 끝이 났습니다. 이제 서보 캘리브레이션을 위해서 deepThinkCar를 기동시켜야 합니다. 
+이를 위해서 18650 배터리를 장착해야 합니다. 18650 배터리를 아래 사진과 같이 장착을 합니다. 참고로 deepThinkCar는 병렬연결을 해야 합니다. 
+
+![battery_install](https://user-images.githubusercontent.com/76054530/156148916-41f0cece-723e-4861-9bff-ceb1aca0e117.jpg)
+
+키트에 제공된 SD카드를 라즈베리파이에 장착합니다. 사진을 참고 해서 SD카드를 장착합니다. deepThinkCar의 구조상 SD카드 장착이 조금 어려우니 주의하시기 바랍니다. 
+
+![SD_card](https://user-images.githubusercontent.com/76054530/156149185-90cd5ec0-046f-489c-9f9c-ae56f8bec9bb.jpg)
+
 
 ### 링크
 [라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
@@ -228,8 +267,8 @@ HAT보드와 카메라 케이블의 처리는 아래 사진을 참고해서 정�
 [deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc)   
 [deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly)    
 [deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)   
-[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)   
-[2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)   
+[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)      
+[2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)    
 [3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)   
 [4단계 딥러닝 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_4)      
 [5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
