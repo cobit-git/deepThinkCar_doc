@@ -292,14 +292,14 @@ $python3 assembly_servo_90.py
 
 ![서보 조립](https://user-images.githubusercontent.com/76054530/157375020-68511f9c-fa63-431d-ade0-9e31200c2c05.jpg)
 
-
-
+### 조립완료 
+이제 모든 조립이 완료가 되었습니다. 다음에는 라즈베리파이 VNC 개발 환경을 만들어 보도록 하겠습니다. 
 
 ### 링크
 [라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
 [라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)   
-[deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc)   
-[deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly)    
+[deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly)   
+[deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc) 
 [deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)   
 [1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)      
 [2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)    
