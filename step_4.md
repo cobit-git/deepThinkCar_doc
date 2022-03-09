@@ -104,9 +104,6 @@ motor.motor_stop()
 cap.release()
 cv2.destroyAllWindows() 
 ```
-### 그 다음 단계
-딥러닝 차선인식 주행에 성공하면, 그 다음 단계는 MobileNet SSD와 트랜스퍼 러닝(Transfer Learning)를 사용하여 보행자, 신호등, 및 교통신호를 인식하는 오브젝트 디텍션(Object Detection)을 실행하게 됩니다. 다음 링크를 통해서 5단계로 갈 수 있습니다.     
-[5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
 
 ### 링크
 [라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)      
