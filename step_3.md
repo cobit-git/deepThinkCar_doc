@@ -18,7 +18,8 @@ $ ls -al
 </code></pre>
 
 압축을 위해 "cobit_label_data_compress.py" 스크립트를 실행하면 "car_image_angle.zip"이라는 압축파일이 하나 생깁니다.    
-이 파일을 주피터 노트북을 이용해서 PC로 옮겨야 합니다. 이를 위해 먼저 주피터 노트북을 다음과 같이 실행합니다. 
+이 파일을 주피터 노트북을 이용해서 PC로 옮겨야 합니다. 이를 위해 먼저 주피터 노트북을 다음과 같이 실행합니다. deepThinkCar에 주피터노트북셋업은 생략되어 있습니다. 
+만약 주피너 노트북 설치가 어려우면 USB 메모리 스틱을 사용해도 됩니다. 
 <pre><code>
 pi@raspberrypi:~/deepThinkCar $ jupyter-notebook --ip=172.31.99.111 --no-browser
 ....    
@@ -224,14 +225,13 @@ Epoch10/10까지 실행하는데 40분~50분 정도의 시간이 소요됩니다
 [4단계 입러닝 자율주행하기](https://cobit-git.github.io/deepThinkCar_doc/step_4)
 
 ### 링크
-[라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)    
-[라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)   
-[deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc)   
-[deepThinkCar 조립순서](https://cobit-git.github.io/deepThinkCar_doc/assembly)    
-[deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)   
-[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)   
-[2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)   
-[3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)   
-[4단계 딥러닝 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_4)      
-[5단계 오브젝트 디텍션](https://cobit-git.github.io/deepThinkCar_doc/step_5)
+[라즈베리파이 OS 이미지 만들기](https://cobit-git.github.io/deepThinkCar_doc/os)      
+[라즈베리파이 소프트웨어 설치 및 셋업](https://cobit-git.github.io/deepThinkCar_doc/setup)      
+[deepThinkCar 조립](https://cobit-git.github.io/deepThinkCar_doc/assembly)    
+[deepThinkCar 라즈베리파이 VNC 환경 구축](https://cobit-git.github.io/deepThinkCar_doc/vnc)    
+[deepThinkCar 하드웨어 테스트](https://cobit-git.github.io/deepThinkCar_doc/hardware)     
+[1단계 OpenCV 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_1)     
+[2단계 차선인식 데이터 라벨링](https://cobit-git.github.io/deepThinkCar_doc/step_2)     
+[3단계 딥러닝 트레이닝](https://cobit-git.github.io/deepThinkCar_doc/step_3)     
+[4단계 딥러닝 차선인식 주행](https://cobit-git.github.io/deepThinkCar_doc/step_4)  
 
