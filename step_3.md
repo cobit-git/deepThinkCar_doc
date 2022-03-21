@@ -62,7 +62,7 @@ C:\Users\user\Downloads>
 </code></pre>
 
 #### YML 파일을 이용한 deepThinkCar용 아나콘다 가상환경 설치 
-deepThinkCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deepThinkCar용 아나콘다 가상화경에 보면 "cobit.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deepThinkCar용 아나콘다 가상환경을 만들 수 있습니다.
+deepThinkCar 아나코다 가상환경을 다운로드 했으면, YML 파일을 이용하여 가상환경을 설치합니다. 다운로드 받은 deepThinkCar용 아나콘다 가상화경에 보면 "cobitlab.yml"이라는 파일이 있습니다. 이 YML 환경파일을 이용해서 deepThinkCar용 아나콘다 가상환경을 만들 수 있습니다.
 아나콘다에서 "Ananconda PowerShell Prompt"를 실행합니다.    
 ![image](https://user-images.githubusercontent.com/76054530/126259373-2343277b-3438-4770-b5e8-a5dc66d3f5de.png)   
 그러면 다음과 같은 윈도 파워쉘 기반의 프롬프트윈도가 열립니다.    
