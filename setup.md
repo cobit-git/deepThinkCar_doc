@@ -125,7 +125,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ### 케라스
 케라스는 텐서플로와 같이 딥러닝에 사용되는 뉴럴네트워크 API 라이브러리 입니다. deepThinkCar 자율주행 파이썬 코드는 텐서플로와 케라스를 사용하여 뉴럴네트워크 구성, 딥런닝 트레이닝, 추론 등을 수행합니다. 케라스를 설치하여면 다음과 같이 합니다.
 <pre><code>
-$pip3 install keras
+$pip3 install keras==2.4.3
 </code></pre>
 
 케라스는 pip3를 사용하여 설치할 수 있습니다. 다만 케라스를 제대로 파이썬에서 import 하려면 먼저 텐서플로를 설치해야 합니다.     
