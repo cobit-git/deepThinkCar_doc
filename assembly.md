@@ -136,7 +136,12 @@ M3x30 접시머리나사를 체결할때 아래 사진과 같이 접시부분이
 
 아크릴 본체 하판을 뒤에서 바라볼때 M2모터는 좌측, M1모터는 우측에 부착해야 합니다. 완전히 완성된 모습은 다음과 같습니다.  
 
-![rear_wheel_assy_7](https://user-images.githubusercontent.com/76054530/156126336-f28df13b-f40d-4e52-893c-fd15a6ef2ee8.jpg)
+![rear_wheel_assy_7](https://user-images.githubusercontent.com/76054530/156126336-f28df13b-f40d-4e52-893c-fd15a6ef2ee8.jpg)   
+
+다 조립이 된다면 뒤바퀴는 아크릴 상판과 하판 사이에 위치하게 됩니다. 
+
+![IMG_2016](https://user-images.githubusercontent.com/76054530/163754353-1f9a3bf5-c380-4a50-94d5-919d872ff7e3.jpg)
+
 
 ### 7. 아크릴 본체 하판 PCB 서포터 조립  
 뒤바퀴 모터를 조립한 다음에는 아크릴 본체 하판 PCB 서포터를 조립합니다. 이 단계에 필요한 구성품은 다음과 같습니다. 
