@@ -1,6 +1,6 @@
 ## 이 문서에 나오는 방법은 라즈베리파이 32비트를 사용합니다. deepThinkCar는 2022년 10월부터 라즈베리파이 64비트 버전을 사용합니다. 다음 링크의 문서를 참고해서 OS를 제작해 주십시오.   
 
-[라즈베리파이 64비트 OS 만들기](https://jd-edu.github.io/deepThinkCar_mini/os)
+[라즈베리파이 64비트 OS 만들기](https://jd-edu.github.io/deepThinkCar_mini/doc/os)
 
 ## deepThinkCar에 사용할 라즈베리파이 OS 이미지 만들기 
 
